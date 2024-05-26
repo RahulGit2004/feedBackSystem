@@ -63,5 +63,4 @@ public class UserController {
     public String createBatch(String adminPhone, String batchName) {
         return batchService.createBatch(adminPhone,batchName,studentService);
     }
-
 }
