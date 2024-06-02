@@ -6,12 +6,9 @@ import Feedback_System.service.impl.UserServiceImpl;
 
 public interface FeedbackService {
 
-    String submitFeedback(String studentPhone, String batchName, UserServiceImpl studentService, BatchServiceImpl batchService, QuestionServiceImpl questionService);
-    void feedbackList();
-
-    String listOfFeedbackByBatch( String batch, BatchServiceImpl batchService);
-
-    String feedbackByBatchToAdmin(String adminPhone, String batch, BatchServiceImpl batchService, UserServiceImpl student);
+    String submitFeedback(String studentPhone, String batchName, BatchServiceImpl batchService, QuestionServiceImpl questionService);
+    String feedbackByBatch(String adminPhone, String batch, BatchServiceImpl batchService, UserServiceImpl user);
 
     String individualFeedback(String adminPhone, String studentPhone, UserServiceImpl studentService);
+    boolean deleteFeedbackByBatch(String batchName, String qId);
 }

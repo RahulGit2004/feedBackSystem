@@ -9,13 +9,16 @@ import java.util.List;
 
 public interface QuestionService {
     String createQuestion(String batchName, String adminPhone, UserServiceImpl studentService, BatchServiceImpl batchService);
-    List<FeedbackQuestion> list();
+    List questionList();
 
     String deleteQuestion(String qId, String batch, String adminPhone, UserServiceImpl service, BatchServiceImpl batchService, FeedbackServiceImpl feedbackService);
 
     String updateQuestion(String qId, String batch, String adminPhone, UserServiceImpl studentService, BatchServiceImpl batchService);
 
     void listWithQid();
+    List listOfQuestion();
 
+
+    void listOfQuestionByBatch(String batch, BatchServiceImpl batchService);
 
 }
