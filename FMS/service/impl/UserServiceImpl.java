@@ -11,36 +11,34 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     UserRepoImpl userRepo = new UserRepoImpl();
 
-    public boolean signUp(String username, String password, String phone, String role) {
+    public String signUp(String username, String password, String phone, String role) {
         // waiting from prince end.
-        User user = new User(username, password, phone, role.toUpperCase());
+        User user = new User(username, password, phone, role);
         userRepo.saveUser(user);
-        return true;
+        return "Register Success";
 
     }
 
 
     @Override
-    public boolean getUser(String username, String pass) {
+    public String getUser(String username, String pass) {
         User userName = userRepo.findByUsername(username);
         User password = userRepo.findByPassword(pass);
         if (userName != null) {
             if (password != null) {
-                return true;
+                return "Login Success";
             } else {
-                System.out.println("Invalid Password");
-                return false;
+                return "Invalid Password";
             }
         }
-        System.out.println("Invalid username");
-        return false;
+        return "Invalid username";
     }
 
     @Override
     public List<User> userList() {
         List<User> users = userRepo.listOfUser();
         for (User user : users) {
-            System.out.println(user.getRole() + " " + user.getPhoneNumber());
+            System.out.println(user.getRole() + " " + user.getPhone());
         }
         return users;
     }
@@ -67,7 +65,7 @@ public class UserServiceImpl implements UserService {
         // for saving important data which is need for batch
         List<User> students = new ArrayList<>();
         for (User user : users) {
-            if (user.getPhoneNumber().equals(studentPhone)) {
+            if (user.getPhone().equals(studentPhone)) {
                 String studentName = user.getUsername();
                 String studentPassword = user.getPassword();
                 User student = new User(studentName, studentPhone, studentPassword);
@@ -78,24 +76,5 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
-    @Override
-    public String findPhoneByPassword(String password) {
-       return userRepo.findPhoneNumberByPassword(password);
-    }
 
-    @Override
-    public String findRoleByPhoneNumber(String phoneNumber) {
-        return userRepo.findRoleByPhoneNumber(phoneNumber);
-    }
-
-    @Override
-    public String findUsernameByPhoneNumber(String phoneNumber) {
-
-        return userRepo.findUsernameByPhoneNumber(phoneNumber);
-    }
-
-
-    public int isPhoneExist(String phoneNumber , String username){
-        return userRepo.isPhoneExist(phoneNumber , username);
-    }
 }

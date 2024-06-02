@@ -4,17 +4,18 @@ public class User {
     private String username;
     private String password;
     private String role;
-    private String phoneNumber;
+    private String phone;
 
-    public User(String username, String password, String phoneNumber, String role) {
+    public User(String username, String password, String phone, String role) {
         this.username = username;
         this.password = password;
         this.role = role;
-        this.phoneNumber = phoneNumber;
+        this.phone = phone;
     }
-    public User(String username, String phoneNumber, String password) {
+
+    public User(String username, String phone, String password) {
         this.username = username;
-        this.phoneNumber = phoneNumber;
+        this.phone = phone;
         this.password =  password;
     }
 
@@ -42,12 +43,12 @@ public class User {
         this.role = role;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
 }

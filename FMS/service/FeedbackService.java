@@ -7,8 +7,8 @@ import Feedback_System.service.impl.UserServiceImpl;
 public interface FeedbackService {
 
     String submitFeedback(String studentPhone, String batchName, BatchServiceImpl batchService, QuestionServiceImpl questionService);
+    void feedbackList();
     String feedbackByBatch(String adminPhone, String batch, BatchServiceImpl batchService, UserServiceImpl user);
 
     String individualFeedback(String adminPhone, String studentPhone, UserServiceImpl studentService);
-    boolean deleteFeedbackByBatch(String batchName, String qId);
 }
