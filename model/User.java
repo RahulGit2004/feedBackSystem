@@ -12,7 +12,6 @@ public class User {
         this.role = role;
         this.phoneNumber = phoneNumber;
     }
-
     public User(String username, String phoneNumber, String password) {
         this.username = username;
         this.phoneNumber = phoneNumber;

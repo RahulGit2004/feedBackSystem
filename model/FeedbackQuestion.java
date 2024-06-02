@@ -3,6 +3,7 @@ package Feedback_System.model;
 public class FeedbackQuestion {
     private String questionId;
     private String question;
+
     private String batchName;
     private boolean flag = true;
 
@@ -21,7 +22,7 @@ public class FeedbackQuestion {
     public void setBatchName(String batchName) {
         this.batchName = batchName;
     }
-
+    private String batchName;
 
 
     public String getQuestionId() {

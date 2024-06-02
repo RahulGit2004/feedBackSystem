@@ -1,6 +1,24 @@
 package Feedback_System.model;
 
 public class StudentFeedback {
+    private String feedbackDetials;
+    private String batchName;
+    private String studentPhone;
+    private String feedbackQid;
+
+    public StudentFeedback(String feedbackDetials, String batchName, String studentPhone, String feedbackQid) {
+        this.feedbackDetials = feedbackDetials;
+        this.batchName = batchName;
+        this.studentPhone = studentPhone;
+        this.feedbackQid = feedbackQid;
+    }
+
+    public String getFeedbackDetials() {
+        return feedbackDetials;
+    }
+
+    public void setFeedbackDetials(String feedbackDetials) {
+        this.feedbackDetials = feedbackDetials;
     private String feedbackDetails;
     private String batchName;
     private String studentPhone;
@@ -46,6 +64,12 @@ public class StudentFeedback {
         this.studentPhone = studentPhone;
     }
 
+    public String getFeedbackQid() {
+        return feedbackQid;
+    }
+
+    public void setFeedbackQid(String feedbackQid) {
+        this.feedbackQid = feedbackQid;
     public String getqId() {
         return qId;
     }
